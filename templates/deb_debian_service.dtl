@@ -1,0 +1,14 @@
+[Unit]
+Description={{ package_name }}
+
+[Service]
+User={{ package_name }}
+Type=forking
+ExecStart=/opt/{{ package_name }}/bin/{{ package_name }} start
+ExecStop=/opt/{{ package_name }}/bin/{{ package_name }} stop
+WorkingDirectory=/opt/{{ package_name }}
+Restart=on-failure
+RuntimeDirectory={{ package_name }}
+
+[Install]
+WantedBy=multi-user.target

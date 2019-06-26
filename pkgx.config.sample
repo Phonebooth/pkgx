@@ -7,6 +7,8 @@
 
 %% The user under which the service is going to run
 {package_install_user, "example"}.
+{package_install_user_uid, "9999"}.
+{package_install_user_gid, "9999"}.
 {package_install_user_desc, "Example user"}.
 
 %% Package description

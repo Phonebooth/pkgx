@@ -18,6 +18,7 @@ run(_AppName, _Vsn, PkgVars) ->
          {"debian/postrm", deb_debian_postrm_dtl},
          {"debian/rules", deb_debian_rules_dtl},
          {"debian/" ++ PkgName ++ ".init", deb_debian_init_dtl},
+         {"debian/" ++ PkgName ++ ".service", deb_debian_service_dtl},
          {"debian/" ++ PkgName ++ ".install", deb_debian_install_dtl},
          {PkgName ++ ".config", package_config_dtl}
         ],

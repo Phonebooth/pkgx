@@ -16,9 +16,10 @@ main(Targets) ->
         true ->
             {ok, PkgVars} = file:consult(VarsFile),
             RelxVars = relx_vars(),
+            {env, Env} = proplists:lookup(env, PkgVars),
             {package_name, PkgName} = proplists:lookup(package_name, PkgVars),
             {release, {RelName, RelVer}, _RelDeps} = lists:keyfind(release, 1, RelxVars),
-            BaseDir = lists:flatten(io_lib:format("_build/prod/rel/~s", [RelName])),
+            BaseDir = lists:flatten(io_lib:format("_build/~s/rel/~s", [Env,RelName])),
             io:format("Release name: '~s', version: '~s'\n", [RelName, RelVer]),
             ReleasesFile = BaseDir ++ "/releases/RELEASES",
             case filelib:is_regular(ReleasesFile) of
