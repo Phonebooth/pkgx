@@ -9,6 +9,6 @@ Standards-Version: 3.9.2
 
 Package: {{ package_name }}
 Architecture: amd64
-Depends: bash, adduser{% if package_depends %}, {{ package_depends }}{% endif %}
+Depends: bash, adduser{% if package_depends %}, {{ package_depends|safe }}{% endif %}
 Description: {{ package_shortdesc }}
   {{ package_desc }}
